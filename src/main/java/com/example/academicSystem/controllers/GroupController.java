@@ -30,7 +30,7 @@ public class GroupController {
     }
 
     @GetMapping("/{idGroup}")
-    public ResponseEntity<GroupRecordDto> getGroupById(@PathVariable UUID idGroup){
+    public ResponseEntity<GroupRecordDto> getGroupById(@PathVariable(value="idGroup") UUID idGroup){
         return ResponseEntity.ok(groupService.findGroupById(idGroup));
     }
 

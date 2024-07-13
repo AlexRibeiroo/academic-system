@@ -64,7 +64,6 @@ public class CourseService {
     public Course deleteCourse(UUID id) {
         Course course = courseRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Course not found"));
-        System.out.println(course.getName());
         courseRepository.delete(course);
         return course;
     }
