@@ -55,12 +55,12 @@ public class StudentService {
         return studentRepository.save(student);
     }
 
-    public Student deleteStudent(UUID id){
+    public void deleteStudent(UUID id){
         Student student = studentRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Student not found!"));
 
         studentRepository.delete(student);
-        return student;
+
     }
 
 }

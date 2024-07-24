@@ -61,11 +61,10 @@ public class CourseService {
         return course;
     }
 
-    public Course deleteCourse(UUID id) {
+    public void deleteCourse(UUID id) {
         Course course = courseRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Course not found"));
         courseRepository.delete(course);
-        return course;
     }
 
 }

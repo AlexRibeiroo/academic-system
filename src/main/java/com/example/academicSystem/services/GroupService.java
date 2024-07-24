@@ -62,10 +62,10 @@ public class GroupService {
         return groupRepository.save(group);
     }
 
-    public Group deleteGroup(UUID id){
+    public void deleteGroup(UUID id){
         Group group = groupRepository.findById(id).
                 orElseThrow(() -> new IllegalArgumentException("Group not found!"));
         groupRepository.delete(group);
-        return group;
+
     }
 }
